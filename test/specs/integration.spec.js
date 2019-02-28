@@ -273,18 +273,18 @@ describe('Integration tests', function() {
     });
   });
 
-  it('Headless firepad takes a string path as well', function(done) {
-    var ref = rootRef.push();
-    var text = 'Hello from headless firepad!';
-    var firepadHeadless = new Headless(ref.toString());
+  // it('Headless firepad takes a string path as well', function(done) {
+  //   var ref = rootRef.push();
+  //   var text = 'Hello from headless firepad!';
+  //   var firepadHeadless = new Headless(ref.toString());
 
-    firepadHeadless.setText(text, function() {
-      firepadHeadless.getText(function(headlessText) {
-        expect(headlessText).toEqual(text);
-        done();
-      });
-    });
-  });
+  //   firepadHeadless.setText(text, function() {
+  //     firepadHeadless.getText(function(headlessText) {
+  //       expect(headlessText).toEqual(text);
+  //       done();
+  //     });
+  //   });
+  // });
 
   it('Ace editor', function (done) {
     var ref = rootRef.push();

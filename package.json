@@ -1,7 +1,7 @@
 {
-  "name": "firepad",
+  "name": "@gorpacrate/firepad",
   "description": "Collaborative text editing powered by Firebase",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "author": "Firebase (https://firebase.google.com/)",
   "contributors": [
     "Michael Lehenbauer <michael@firebase.com>"
@@ -9,7 +9,7 @@
   "homepage": "http://www.firepad.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firebase/firepad.git"
+    "url": "git+https://github.com/firebase/firepad.git"
   },
   "browser": {
     "jsdom": false
@@ -39,11 +39,12 @@
     "package.json"
   ],
   "dependencies": {
-    "firebase": "^5.5.5",
     "jsdom": "^12.2.0"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
     "coveralls": "^3.0.2",
+    "firebase": "^5.5.5",
     "grunt": "^1.0.3",
     "grunt-cli": "^1.3.1",
     "grunt-coffeelint": "0.0.16",
@@ -63,9 +64,18 @@
     "monaco-editor": "^0.14.3"
   },
   "scripts": {
-    "test": "grunt test",
-    "travis": "grunt",
-    "dev": "grunt watch",
-    "build": "grunt build"
-  }
+    "grunt": "grunt",
+    "bower": "bower",
+    "install-dependencies": "yarn && yarn bower install && yarn grunt coffee",
+    "test": "yarn grunt test",
+    "travis": "yarn grunt",
+    "dev": "yarn grunt watch",
+    "build": "yarn grunt build"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "license": "MIT"
 }
